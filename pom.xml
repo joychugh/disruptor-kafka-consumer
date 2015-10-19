@@ -13,10 +13,19 @@
         <thread.safety.doc.version>1.0.36</thread.safety.doc.version>
         <testng.version>6.1.1</testng.version>
         <reactive.streams.version>1.0.0</reactive.streams.version>
-        <kafka.version>0.8.2.2</kafka.version>
+        <kafka.version>0.9.0.0-SNAPSHOT</kafka.version>
+        <easymock.version>3.4</easymock.version>
+        <disruptor.version>3.3.2</disruptor.version>
     </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>com.boundary</groupId>
+            <artifactId>high-scale-lib</artifactId>
+            <version>1.0.6</version>
+        </dependency>
+
         <dependency>
             <groupId>org.ow2.bundles</groupId>
             <artifactId>ow2-bundles-externals-annotations</artifactId>
@@ -48,9 +57,22 @@
         </dependency>
 
         <dependency>
+            <groupId>com.lmax</groupId>
+            <artifactId>disruptor</artifactId>
+            <version>${disruptor.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.apache.kafka</groupId>
-            <artifactId>kafka_2.10</artifactId>
+            <artifactId>kafka_2.11</artifactId>
             <version>${kafka.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.easymock</groupId>
+            <artifactId>easymock</artifactId>
+            <version>${easymock.version}</version>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>
@@ -68,5 +90,12 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+    <repository>
+        <id>local</id>
+        <url>http://myserver/repo</url>
+    </repository>
+    </repositories>
 
 </project>
